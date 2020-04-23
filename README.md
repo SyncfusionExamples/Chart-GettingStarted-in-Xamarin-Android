@@ -9,26 +9,22 @@ You can add [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-androi
 
 You can get the chart instance from axml page in MainActivity using the following code.
 
-{% highlight C# %}
-
+**[C#]**
+```
 SfChart chart = FindViewById<SfChart>(Resource.Id.sfChart1);
-
-{% endhighlight %}
+```
 
 You can create chart using code behind also. The following steps help to add chart using code behind.
 
 Import the [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html) namespace as shown below in your respective Page,
 
-{% highlight C# %}
-
+```
 using Com.Syncfusion.Charts;
 
-{% endhighlight %}
-
+```
 Then initialize an empty chart with [`PrimaryAxis`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartBase~PrimaryAxis.html) and [`SecondaryAxis`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartBase~SecondaryAxis.html) as shown below,
 
-{% highlight C# %} 
-
+```
 SfChart chart = new SfChart (this);
 
 //Initializing Primary Axis
@@ -43,8 +39,7 @@ chart.SecondaryAxis = secondaryAxis;
 
 SetContentView(chart);
 
-{% endhighlight %}
-
+```
 Run the project and check if you get following output to make sure you have configured your project properly to add [`SfChart`.](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html)
 
 ## Populate Chart with data
@@ -53,7 +48,7 @@ To visualize the comparison of person heights in chart data, create an instance 
 
 N> You need to get the `Name` and `Height` values in `Data` collection to the [`ColumnSeries`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ColumnSeries.html) by setting [`XBindingPath`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartSeries~XBindingPath.html) and [`YBindingPath`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.XyDataSeries~YBindingPath.html) with the respective field names to plot the series. 
 
-{% highlight C# %}
+```
 //Initializing primary axis
 CategoryAxis primaryAxis = new CategoryAxis();
 
@@ -86,77 +81,64 @@ series.XBindingPath = "Name";
 series.YBindingPath = "Height";
 
 chart.Series.Add(series);
-{% endhighlight %}
-
-{% highlight C# %}
+```
+```
 public class ChartData   
 {   
     public string Name { get; set; }
 
     public double Height { get; set; }
 }
-{% endhighlight %} 
-
+```
 ## Add Title
 
 You can add title to chart to provide quick information to the user about the data being plotted in the chart. You can set title using [`SfChart.Title`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartBase~Title.html) property as shown below.
 
-{% highlight C# %}
- 
+``` 
 chart.Title.Text = "Chart";
 
-{% endhighlight %}
-
+```
 Refer this [link](https://help.syncfusion.com/xamarin-android/sfchart/charttitle) to learn more about the options available in [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html) to customize chart title.
 
 ## Enable data labels
 
 You can add data labels to improve the readability of the chart. This can be achieved using [`ChartSeries.DataMarker.ShowLabel`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartDataMarker~ShowLabel.html) property as shown below.
 
-{% highlight C# %} 
-
+```
 series.DataMarker.ShowLabel = true;
 
-{% endhighlight %}
-
+```
 Refer this [link](https://help.syncfusion.com/xamarin-android/sfchart/datamarker) to learn more about the options available in [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html) to customize data markers.
 
 ## Enable legend
 
 You can enable legend using [`SfChart.Legend`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart~Legend.html) property as shown below,
 
-{% highlight C# %} 
-
+```
 chart.Legend.Visibility = Visibility.Visible; 
 
-{% endhighlight %}
-
+```
 Additionally, you need to set label for each series using [`ChartSeries.Label`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartSeries~Label.html) property, which will be displayed in corresponding legend.
 
-{% highlight C# %} 
-
+```
 series.Label = "Heights";
 
-{% endhighlight %}
-
+```
 Refer this [link](https://help.syncfusion.com/xamarin-android/sfchart/legend) to learn more about the options available in [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html) to customize legend.
 
 ## Enable tooltip
 
 Tooltips are used to show information about the segment, when you tap on the segment. You can enable tooltip by setting [`ChartSeries.TooltipEnabled `](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.ChartSeries~TooltipEnabled.html) property to true.
 
-{% highlight C# %} 
-
+```
 series.TooltipEnabled = true;
 
-{% endhighlight %}
-
+```
 Refer this [link](https://help.syncfusion.com/xamarin-android/sfchart/tooltip) to learn more about the options available in [`SfChart`](https://help.syncfusion.com/cr/cref_files/xamarin-android/Syncfusion.SfChart.Android~Com.Syncfusion.Charts.SfChart.html) to customize tooltip.
 
 The following code example gives you the complete code of above configurations.
 
-{% highlight C# %} 
-
+```
 using Com.Syncfusion.Charts;
 
 namespace Chart_GettingStarted
@@ -207,8 +189,7 @@ namespace Chart_GettingStarted
     }
 }
 
-{% endhighlight %}
-
+```
 The following chart is created as a result of the above codes.
 
 ![Chart in Xamarin.Android ](Getting_Started_Chart_Output.png)
