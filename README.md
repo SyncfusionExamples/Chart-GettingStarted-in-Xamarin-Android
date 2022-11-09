@@ -1,4 +1,5 @@
-# Chart-GettingStarted-in-Xamarin-Android
+# Getting Started of Xamarin.Android Chart(SfChart)
+
 This is demo application of Xamarin.Android SfChart control. The minimal set of required properties have been configured in this project to get started with SfChart in Xamarin.Android.
 
 For more details please refer the Xamarin.Android SfChart UG documentation [Getting Started](https://help.syncfusion.com/xamarin-android/sfchart/getting-started) link.
